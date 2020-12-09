@@ -99,7 +99,7 @@ export default class SimpleSlider extends Component {
             <YouTube videoId="_3t47lJL4PM" opts={opts}></YouTube>
           </div>
           <div className="slick-item">
-          <div className="mainMediaTitleWrapper">
+            <div className="mainMediaTitleWrapper">
               <div className="mainMediaTitle">
                 Episode 4 - #TechnologyOnTheMove | Ft. Lalitha Ramani
               </div>
@@ -109,12 +109,10 @@ export default class SimpleSlider extends Component {
             <div className="subMediaTitle">
               Episode 4 - #TechnologyOnTheMove | Ft. Lalitha Ramani
             </div>
-              <Divider variant="fullWidth" />
-            </div>
             <YouTube videoId="CBE4Su301n4" opts={opts}></YouTube>
           </div>
           <div className="slick-item">
-          <div className="mainMediaTitleWrapper">
+            <div className="mainMediaTitleWrapper">
               <div className="mainMediaTitle">
                 Episode 5 - #TechnologyOnTheMove | Ft. Lalitha Ramani
               </div>
@@ -127,7 +125,7 @@ export default class SimpleSlider extends Component {
             <YouTube videoId="E8UO7DA9KHs" opts={opts}></YouTube>
           </div>
           <div className="slick-item">
-          <div className="mainMediaTitleWrapper">
+            <div className="mainMediaTitleWrapper">
               <div className="mainMediaTitle">
                 Episode 6 - #TechnologyOnTheMove | Ft. Lalitha Ramani
               </div>
