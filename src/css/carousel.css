@@ -190,7 +190,8 @@
   letter-spacing: -0.54px;
   color: #041f41;
   opacity: 1;
-  max-width: 200px;
+  max-width: 280px;
+  max-height: 50px;
 }
 
 .mainMediaTitleWrapper {
@@ -212,7 +213,8 @@
   letter-spacing: -0.72px;
   color: #041f41;
   opacity: 1;
-  max-width: 300px;
+  max-width: 436px;
+  max-height: 65px;
 }
 
 .slick-slide.slick-active.slick-current .mainMediaTitleWrapper {
