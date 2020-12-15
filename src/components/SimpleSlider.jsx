@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import YouTube from "react-youtube";
-import { FaChevronRight } from "react-icons/fa";
-import { FaChevronLeft } from "react-icons/fa";
 import Divider from "@material-ui/core/Divider";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import { Grid, Button } from "@material-ui/core";
 
 class CustomSlide extends Component {
   render() {
@@ -12,6 +13,7 @@ class CustomSlide extends Component {
       width: "100%",
     };
 
+    
     const { index, ...props } = this.props;
     return (
       <div {...props}>
@@ -26,17 +28,31 @@ class CustomSlide extends Component {
           Rohit Kaila on All Things Tech | #TechnologyOnTheMove
         </div>
 
-        <YouTube videoId="voLuHiIp5gY" opts={opts}></YouTube>
+        <YouTube videoId="voLuHiIp5gY" opts={opts} onReady={this._onReady} onStateChange={this._onStateChange}></YouTube>
       </div>
     );
+
+   
   }
+
+  _onReady(event) {
+    // access to player in all event handlers via event.target
+    console.log("isnide onReady event");
+    debugger;
+    event.target.pauseVideo();
+  };
+
+  _onStateChange(event){
+     console.log("on state change");
+  }
+
 }
 
 function NextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <span className="slick-arrow carousel-control-next" onClick={onClick}>
-      <FaChevronRight />
+      <ArrowForwardIosIcon fontSize="small" />
     </span>
   );
 }
@@ -46,12 +62,13 @@ function PrevArrow(props) {
 
   return (
     <span className="slick-arrow carousel-control-prev" onClick={onClick}>
-      <FaChevronLeft />
+      <ArrowBackIosIcon fontSize="small"/>
     </span>
   );
 }
 export default class SimpleSlider extends Component {
   render() {
+    const buttonText = "show all videos" ;
     const settings = {
       focusOnSelect: true,
       infinite: true,
@@ -67,7 +84,7 @@ export default class SimpleSlider extends Component {
       width: "100%",
     };
     return (
-      <div>
+      <div className="video-thumbs-wrapper">
         <h2>Videos</h2>
 
         <Slider {...settings}>
@@ -138,6 +155,12 @@ export default class SimpleSlider extends Component {
             <YouTube videoId="_3t47lJL4PM" opts={opts}></YouTube>
           </div>
         </Slider>
+
+        <Grid container justify="center" className="showAllButtonWrapper">
+          <Button onClick={this.toggleShowAllVideos}>
+            {buttonText} <ArrowForwardIosIcon fontSize="small" />
+          </Button>
+        </Grid>
       </div>
     );
   }

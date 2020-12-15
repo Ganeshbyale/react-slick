@@ -1,3 +1,13 @@
+*:focus {
+  outline: 0;
+  outline: none;
+}
+
+.video-thumbs-wrapper {
+  background: #f9f9f9;
+  opacity: 1;
+}
+
 .headerLeft {
   color: var(--unnamed-color-041f41);
   text-align: left;
@@ -15,11 +25,6 @@
   float: right;
   margin-right: 10px;
   margin-top: 18px;
-}
-
-.mainMediaTitleWrapper {
-  margin-bottom: 20px;
-  padding-left: 17px;
 }
 
 .mainMediaTitle {
@@ -72,6 +77,7 @@
 .slick-slide.slick-active.slick-current iframe {
   width: 628px !important;
   height: 388px !important;
+  padding-right: 24px;
 }
 
 .slick-slide.slick-active,
@@ -192,15 +198,16 @@
   opacity: 1;
   max-width: 280px;
   max-height: 50px;
+  padding-bottom: 16px;
 }
 
 .mainMediaTitleWrapper {
   margin-bottom: 20px;
-  padding-left: 17px;
   width: 100%;
   position: absolute;
   left: 100%;
   display: none;
+  margin-bottom: 20px;
 }
 
 .mainMediaTitleWrapper .time {
@@ -223,4 +230,8 @@
 
 .slick-slide.slick-active.slick-current .subMediaTitle {
   display: none;
+}
+
+.allVideosGridLeft iframe {
+  border-radius: 6px;
 }

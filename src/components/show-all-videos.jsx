@@ -4,6 +4,7 @@ import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import CardMedia from "@material-ui/core/CardMedia";
 import VideoMediaCard from "./VideoMediaCard";
 import "../css/carousel.css";
+import YouTube from "react-youtube";
 
 class ShowAllVideos extends Component {
   constructor(props) {
@@ -19,24 +20,17 @@ class ShowAllVideos extends Component {
   }
 
   render() {
-      const {showAll} = this.state;
-      const buttonText = !showAll ? "show all videos" : "hide all Videos"
+      
+      const opts = {
+        height: "388",
+        width: "612",
+      };
     return (
       <div>
-        <Grid container justify="center" className="showAllButtonWrapper">
-          <Button onClick={this.toggleShowAllVideos}>
-            {buttonText} <ArrowForwardIosIcon fontSize="small" />
-          </Button>
-        </Grid>
-        {showAll && (
-        <>
+       
         <Grid container className="allVideosGrid">
           <Grid item xs={6} className="allVideosGridLeft">
-            <VideoMediaCard
-              width={612}
-              height={388}
-              imgUrl="/img/thumb-2.png"
-            />
+          <YouTube videoId="l8DWCf5aRqs" opts={opts}></YouTube>
           </Grid>
           <Grid item xs={6} className="allVideosGridRight">
           Rohit Kaila on All Things Tech | #TechnologyOnTheMove
@@ -44,19 +38,15 @@ class ShowAllVideos extends Component {
         </Grid>
 
         <Grid container className="allVideosGrid">
-          <Grid item xs={6}>
-            <VideoMediaCard
-              width={612}
-              height={388}
-              imgUrl="/img/thumb-3.png"
-            />
+          <Grid item xs={6} className="allVideosGridLeft">
+          <YouTube videoId="_3t47lJL4PM" opts={opts}></YouTube>
           </Grid>
           <Grid item xs={6} className="allVideosGridRight">
           Episode 2 - #TechnologyOnTheMove | Ft. Lalitha Ramani
           </Grid>
         </Grid>
-        </>
-        )}
+        
+       
       </div>
     );
   }
